@@ -1,9 +1,9 @@
 {
-	"name": "vscode-office",
+	"name": "vscode-office-fork",
 	"displayName": "Office Viewer",
 	"description": "View word,excel files and using WYSIWYG editor for markdown.",
-	"version": "3.5.6",
-	"publisher": "cweijan",
+	"version": "3.5.7",
+	"publisher": "jzx",
 	"icon": "images/logo.png",
 	"engines": {
 		"vscode": "^1.64.0"
@@ -502,10 +502,10 @@
 	"scripts": {
 		"dev": "vite --mode=development",
 		"lint:fix": "eslint src/**/*.ts --fix",
-		"build": "rm -rf out && vite build --mode=production",
+		"build": "node -e \"require('fs').rmSync('out', {recursive:true, force:true})\" && vite build --mode=production",
 		"package": "vsce package --no-dependencies",
 		"publish": "vsce publish --no-dependencies",
-		"vscode:prepublish": "yarn run build"
+		"vscode:prepublish": "npm run build"
 	},
 	"devDependencies": {
 		"@types/node": "^22.10.0",

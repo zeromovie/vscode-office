@@ -24,8 +24,8 @@ async function convertMarkdown(inputMarkdownFile, config) {
   const $ = require("cheerio").load(html);
   const containsMermaid = $('.mermaid').length > 0;
   if (containsMermaid) {
-      const mermaidScript = `
-    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+    const mermaidScript = `
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     `;
 
